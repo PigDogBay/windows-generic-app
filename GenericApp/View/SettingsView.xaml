@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="MpdBaileyTechnology.GenericApp.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <DockPanel>
+        <StackPanel 
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal">
+            <Button Margin="5 5 5 5"
+                    MinWidth="100"
+                    Content="Reset"
+                    Command="{Binding CmdReset}"
+                    ToolTip="Reset the automatic calibration settings to there defaults"/>
+        </StackPanel>
+        <Grid VerticalAlignment="Center"
+          HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0"
+               Grid.Row="0"
+               MinWidth="200"
+               HorizontalContentAlignment="Right"
+               FontWeight="Bold"
+               Margin="5 5 20 5"
+               Content="User Name"/>
+            <TextBox 
+               Grid.Column="1"
+               Grid.Row="0"
+               Margin="5 5 5 5"
+               VerticalContentAlignment="Center"
+               MinWidth="100"
+               ToolTip="Enter your user name."
+               Text="{Binding UserName}"/>
+            <Label Grid.Column="0"
+               Grid.Row="1"
+               MinWidth="200"
+               HorizontalContentAlignment="Right"
+               FontWeight="Bold"
+               Margin="5 5 20 5"
+               Content="Time Out (ms)"/>
+            <TextBox 
+               Grid.Column="1"
+               Grid.Row="1"
+               Margin="5 5 5 5"
+               VerticalContentAlignment="Center"
+               MinWidth="100"
+               ToolTip="Enter the time out in milliseconds"
+               Text="{Binding TimeOut}"/>
+            <Label Grid.Column="0"
+               Grid.Row="2"
+               MinWidth="200"
+               HorizontalContentAlignment="Right"
+               FontWeight="Bold"
+               Margin="5 5 20 5"
+               Content="Max Count"/>
+            <TextBox 
+               Grid.Column="1"
+               Grid.Row="2"
+               Margin="5 5 5 5"
+               VerticalContentAlignment="Center"
+               MinWidth="100"
+               ToolTip="Enter the maximum limit."
+               Text="{Binding MaxCount}"/>
+            <Label Grid.Column="0"
+               Grid.Row="3"
+               MinWidth="200"
+               HorizontalContentAlignment="Right"
+               FontWeight="Bold"
+               Margin="5 5 20 5"
+               Content="Calibration Range"/>
+            <TextBox 
+               Grid.Column="1"
+               Grid.Row="3"
+               Margin="5 5 5 5"
+               VerticalContentAlignment="Center"
+               MinWidth="100"
+               ToolTip="The range in °C for the TAS temperatures to be within the set point temperature for calibration"
+               Text="{Binding CalibrationRange}"/>
+            <Label Grid.Column="0"
+               Grid.Row="4"
+               MinWidth="200"
+               HorizontalContentAlignment="Right"
+               FontWeight="Bold"
+               Margin="5 5 20 5"
+               Content="Time Out Duration"/>
+            <TextBox 
+               Grid.Column="1"
+               Grid.Row="4"
+               Margin="5 5 5 5"
+               VerticalContentAlignment="Center"
+               MinWidth="100"
+               ToolTip="Enter the maximum allowed time for the verification program (hours : minutes : seconds)"
+               Text="{Binding TimeOutDuration}"/>
+            <Button Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="6"
+                    Content="Save Settings"
+                    Command="{Binding CmdSaveSettings}"
+                    Margin="5 5 5 5"/>
+        </Grid>
+    </DockPanel>
+</UserControl>

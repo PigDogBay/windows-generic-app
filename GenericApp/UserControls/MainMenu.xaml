@@ -1,0 +1,194 @@
+﻿<UserControl x:Class="MpdBaileyTechnology.GenericApp.UserControls.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <Menu Background="White">
+        <Menu.Resources>
+            <Style TargetType="{x:Type MenuItem}">
+                <Setter Property="Margin"
+				Value="2,2,2,2"/>
+            </Style>
+        </Menu.Resources>
+
+        <MenuItem Header="_File">
+            <MenuItem 
+				Command="ApplicationCommands.New">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/document_plain.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem 
+				Command="ApplicationCommands.Open">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/folder.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem 
+				Command="ApplicationCommands.Save">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/disk_blue.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem 
+				Command="ApplicationCommands.SaveAs"/>
+            <Separator/>
+            <MenuItem 
+				Command="ApplicationCommands.Print">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/printer.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem 
+				Command="ApplicationCommands.PrintPreview">
+            </MenuItem>
+            <Separator/>
+            <MenuItem 
+				Header="E_xit"
+				Command="ApplicationCommands.Close" />
+        </MenuItem>
+        <MenuItem Header="_Edit">
+            <MenuItem Command="ApplicationCommands.Undo">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/undo.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="ApplicationCommands.Redo">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/redo.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Command="ApplicationCommands.Cut">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/cut.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="ApplicationCommands.Copy">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/copy.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="ApplicationCommands.Paste">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/paste.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Command="ApplicationCommands.SelectAll"/>
+        </MenuItem>
+        <MenuItem Header="_Window">
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.ConnectionVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="_Connection"/>
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.SettingsVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="_Settings"/>
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.LogVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="_Log"/>
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.ChartVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="Chart"/>
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.ListVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="List"/>
+            <MenuItem 
+                CommandParameter="MpdBaileyTechnology.GenericApp.ViewModel.ControlVM"
+                Command="{Binding CmdShowWorkspace}"
+                Header="Control"/>
+            <Separator/>
+            <MenuItem 
+				Header="_Close Tab"
+				Command="{Binding CmdCloseTab}" />
+            <MenuItem 
+				Header="Close _All"
+				Command="{Binding CmdCloseAll}" />
+        </MenuItem>
+        <MenuItem Header="_Help">
+            <MenuItem 
+				Command="{Binding CmdShowHelp}"
+				Header="_Help Topics">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/help.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{Binding CmdShowTechnicalSupport}"
+						  Header="_Technical Support">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/lifebelt.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{Binding CmdGotoWebsite}"
+						  Header="Visit Our _Website">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/earth.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem Command="{Binding CmdShowAbout}"
+					  Header="_About">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16">
+                        <Image.Source>
+                            <BitmapImage UriSource="/GenericApp;component/Resources/Icons/about.png"/>
+                        </Image.Source>
+                    </Image>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+    </Menu></UserControl>
